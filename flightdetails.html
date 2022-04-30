@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flight Details</title>
+<style>
+     *{box-sizing: border-box;margin: 0;}
+body
+{
+  margin: 0;font-family: Arial, Helvetica, sans-serif;
+ }
+.header{
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-bottom: 2px solid #dddddd; 
+        display: flex;
+        justify-content: space-between;
+        color : #1f3646;
+      }
+a
+{
+  text-decoration: none; 
+  color: #86887d;
+  padding: 20px ;
+  position: relative;
+ }
+
+
+span
+{
+  display: flex;
+  align-items: center;
+}
+.imageip
+{
+  width: 100%;
+  height: 250px;
+  background: url('https://gstatic.com/classroom/themes/img_read.jpg');
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding:20px;
+  color: #fff;
+}
+.imageesfp
+{
+  width: 100%;
+  height: 250px;
+  background: url('https://gstatic.com/classroom/themes/img_code.jpg');
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding:20px;
+  color: #fff;
+}
+.imagebe
+{
+  width: 100%;
+  height: 250px;
+  background: url("https://gstatic.com/classroom/themes/img_reachout.jpg");
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding:20px;
+  color: #fff;
+}
+.imagede
+{
+  width: 100%;
+  height: 250px;
+   background-image: url("flight.jpg");
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding:20px;
+  background-size: cover;
+  color: #fff;
+}
+.imagecal
+{
+  width: 100%;
+  height: 250px;
+  background: url('https://gstatic.com/classroom/themes/Geometry.jpg');
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding:20px;
+  color: #fff;
+}
+.mainclass
+{
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 30px;
+}
+.main1{
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 30px;
+  display: flex;
+}
+.left
+{
+  flex: -4%;
+}
+.right
+{
+  flex: 80%;
+  padding-left: 20px;
+}
+.box
+{
+  width: 100%;
+  padding: 10px;
+   border-radius: 6px;
+   border: solid  #86887d 2px;
+   margin-bottom: 20px;
+  }
+.boxe
+{
+  width: 100%;
+  padding: 30px; 
+  border-radius: 6px;
+  border: solid  #86887d 2px;
+  margin-bottom: 20px;
+}
+h4
+{
+  margin:0px
+}
+.main
+{
+display: flex;
+}
+.ldiv
+{
+  width: 0%;
+  height: 130vh;
+  background-color: #37475a;
+  transition: .1s;
+}
+.ldivve
+{
+  width: 0%;
+  height: 120vh;
+  background-color: #37475a;
+  transition: .1s;
+}
+.ldivv
+{
+  width: 0%;
+  height: 170.5vh;
+  background-color: #37475a;
+  transition: .1s;
+}
+.ldivS
+{
+  height: 205vh;
+  background-color: #37475a;
+  transition: .1s;
+}
+.rdiv
+ {
+  flex: 80%;
+  padding: 20px;
+  text-decoration: none;
+  }
+.btn
+{
+  position: absolute;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border: #fff;
+  left: 1%;
+  background-color:transparent;
+  color: #000;
+  padding: 5px;
+  overflow: hidden;
+  font-size: 15px;
+  text-align: center;
+  top: 5%;
+}
+
+main ul
+{
+  list-style: none;
+}
+.oc
+{
+  width: 15%;
+  transition: .1s;
+}
+ .li
+ {
+   text-decoration: none
+ }
+
+.act
+{
+  display: block;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+.act a
+{
+  text-decoration: none;
+  font-size: 24px;
+
+  justify-content: center;
+}
+li h1
+{
+  padding: 30px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  background-color: teal ;
+  transition: .5s;}
+.line
+{
+  border: solid 1px #fff;
+  width: 200px; 
+  margin:0;
+}
+li a:hover
+{
+  opacity: 1;
+}
+.ulj
+{
+  text-decoration: none;
+  list-style-type:none;
+   top: 15%;
+   position: absolute;
+  }
+.link
+{
+  color: white;
+  font-size: large;
+   font-weight:100;
+  }
+.boxmaterial
+{
+  color: black; 
+  font-style: bold;
+}
+ .navbar {
+   overflow: hidden;
+   background-color: #fff;
+ }
+ 
+ .navbar a {
+   float: left;
+   font-size: 16px;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+ }
+ 
+ .dropdown {
+   float: left;
+   overflow: hidden;
+ }
+ 
+ .dropdown .dropbtn {
+   font-size: 16px;  
+   border: none;
+   outline: none;
+   color: white;
+   padding: 14px 16px;
+   background-color: inherit;
+   font-family: inherit;
+   margin: 0;
+ }
+ 
+ .navbar a:hover, .dropdown:hover .dropbtn {
+
+ }
+ 
+ .dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+ }
+ 
+ .dropdown-content a {
+   float: none;
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   text-align: left;
+ }
+ 
+ .dropdown-content a:hover {
+   background-color: #000;
+ }
+ 
+ .dropdown:hover .dropdown-content {
+   display: block;
+ }
+ .classbox
+ {
+   position: absolute;
+   top: 20%;
+   left: 3%;
+   width: 262.5px;
+   height: 285px;
+  border: solid #37475a 3px;
+  border-radius: 3%;
+ }
+ .classa a
+ {
+   color: #37475a; 
+   font-size: large;
+   text-align: center;
+  }
+ .classa hr
+ {
+   position: absolute;
+   left: 0%;
+   top: 50%;
+   width: 259px;
+   border: #37475a solid 1px;
+   background-color: #37475a;
+  }
+ .classbox1
+ {
+   position: absolute;
+   top: 20%; 
+   left: 25%;
+   width: 263px;
+   height: 280px;
+   border: solid #37475a 3px;
+   border-radius: 3%;
+  
+  }
+ .classa1 a
+ {
+   color: #37475a; 
+   font-size: large;
+  }
+ .classa1 hr
+ {
+   position: absolute;
+   left: -1%;
+   top: 50%;
+   width: 259px;
+   border: #37475a solid 1px;
+   background-color: #37475a;
+   border-radius: 3%; 
+  }
+ .classbox2
+ {
+   position: absolute;
+   top: 20%;
+   left: 47%;
+   width: 263px;
+   height: 280px; 
+   border: solid #37475a 3px;
+   border-radius: 3%;
+ }
+ .classa2 a
+ {
+  color: #37475a;
+  font-size: large;
+  }
+ .classa2 hr
+ {
+   position: absolute;
+   left: -1%;
+   top: 50%;
+   width: 259px; 
+   border: #37475a solid 1px;
+   background-color: #37475a; 
+  }
+ .classbox3
+ {
+   position: absolute;
+   top: 20%;
+   left: 69%;
+   width: 263px;
+   height: 280px;
+   border: solid #37475a 3px;
+   border-radius: 3%;
+  }
+ .classa3 a
+ {
+   color: #37475a; 
+   font-size: large;
+  }
+ .classa3 hr
+ {
+   position: absolute;
+   left: -1%;
+   top: 50%;
+   width: 259px;
+   border: #37475a solid 1px;
+   background-color: #37475a; 
+  }
+ .classbox4{
+   position: absolute;
+   top: 70%;
+   left: 3%;
+   width: 263px;
+   height: 280px;
+   border: solid #37475a 3px;
+   border-radius: 3% ;
+  }
+ .classa4 a
+ {
+   color: #37475a; 
+   font-size: large;
+  }
+ .classa4 hr
+ {
+   position: absolute;
+   left: -1%;
+   top: 50%;
+   width: 259px;
+   border: #37475a solid 1px;
+   background-color: #000;
+   border-radius: 3%;
+ }
+
+ .box0
+   {
+    height: 406px; 
+    width: 312px;
+    border:solid 2px #000;
+    border-radius: 5%;
+  }
+.boxx
+{
+  height: 410px;
+  width: 315px;
+  border:solid 2px #000;
+  border-radius:5% ;
+  position: absolute;
+  top: 40%;
+  left: 58%;
+}
+.boxxe
+{
+  height: 406px;
+  width: 312px;
+  border:solid 2px #000; 
+  position: absolute;
+  border-radius: 5%;
+  top: 104%;
+  left: 58%;
+}
+h3
+{
+  color:  #86887d;
+}
+.xyz{display: flex;justify-content: space-between;}
+
+.boxz{height:220px;width: 220px; border: 2px solid black;border-radius: 3%;padding: 20px; justify-content: center;}
+.boxy{height:220px;width: 220px; border: 2px solid black;padding: 20px;display: flex; justify-content: center;border-radius: 3%;}
+.boxu{height:220px;width: 220px; border: 2px solid black;padding: 20px;display: flex; justify-content: center;border-radius: 3%;}
+.boxw{height:220px;width: 220px; border: 2px solid black;padding: 20px;display: flex; justify-content: center;border-radius: 3%;}
+
+.th{top: 90%;position: absolute; width: 100%;left: 0;}
+.footer{top: 170%;position: absolute; width: 100%;}
+.container{display:flex;width: 100%;height: 17%;justify-content: left}
+.container1{display:flex;width: 100%;height: 23%;justify-content: left}
+.znx{display: flex;justify-content: space-between;width: 100%; height:30%;}
+.zny{display: flex;justify-content: space-between;width: 100%; height:30%;}
+.container2{display:flex;width: 100%;height: 23%;justify-content: left}
+.container3{display:flex;width: 100%;height: 23%;justify-content: left}
+.znu{display: flex;justify-content: space-between;width: 100%; height:30%;}
+.znw{display: flex;justify-content: space-between;width: 100%; height:30%;}
+.contain{text-align:center;font-size: 20px;font-weight: 500px;font-style: bold;}
+.bol{font-size:30px;}
+.bols{font-size:15px}
+.screen{display: flex; justify-content: center;}
+.subjectbox{width:175px ;height: 80px; border: #000 solid 1px;display: flex;justify-content: center;}
+.subjectbox1{width:175px ;height: 80px; border: #000 solid 1px;display: flex;justify-content: center;border-top: none;}
+.subjectbox a{color: #000;width:175px ;height: 80px; text-align: center;}
+.subjectbox2{width:175px ;height: 80px; border: #000 solid 1px;display: flex;justify-content: center;border-bottom: none;}
+.subjectboxbreak{width: 875px ;height: 80px; text-align:center; color: #000;}
+.subjectboxbreak{width: 875px ;height: 80px; text-align:center; color: #000;}
+.pra {display: flex; color: #000;justify-content: space-between;width: 200px;height: 160px;}
+.pra a{display: flex; color: #000;justify-content: space-around;}
+.pra hr{height: 160px;}
+.asstitle{display: flex ;justify-content: space-between;}
+.subjectbox a:hover{background-color:#000; color: #fff;} 
+.pra a:hover{background-color:#000; color: #fff;}    
+        
+       
+</style>
+ 
+</head>
+<body>
+    <div class="main">
+       
+        <div class="rdiv" id="rid">
+
+                     <div class="header">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<h1  >Flight Details</h1></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>
+                                
+                       
+                </span>&nbsp;&nbsp;
+
+            </div>
+            <div class="mainclass">
+                <div class="imagede">
+               <h1 style="color : #1f3646; background-color: #ffe165; width :210px ; height :30 px;border-radius:10px" 
+>Flight Details
+               </h1>
+                </div>
+            </div>
+            <div class="main1"> 
+            <div class="left">
+            </div> 
+            <div class="right">
+                <div class="box">
+	<br>
+              <span class="boxmaterial"> <input type="radio" id="html" name="flight" value="indigo"> &nbsp;&nbsp;&nbsp;Indigo ------------- India - Canada  -------------Time 10:15 Am </span>
+              <br>
+            </div>
+            <div class="box">
+             <br>
+              <span class="boxmaterial"> <input type="radio" id="html" name="flight" value="indigo"> &nbsp;&nbsp;&nbsp;Air India  ------------- India - Canada ------------- Time 10:15 Am </span>
+                <br>
+                
+            </div>
+            <div class="box"> 
+             <br>
+              <span class="boxmaterial"> <input type="radio" id="html" name="flight" value="indigo"> &nbsp;&nbsp;&nbsp;Emirates ------------- India - Canada -------------Time 10:15 Am </span>
+                <br>
+                
+            </div>   
+            <div class="box">    
+                <br>
+              <span class="boxmaterial"> <input type="radio" id="html" name="flight" value="indigo"> &nbsp;&nbsp;&nbsp;Qatar ------------- India - Canada -------------Time 10:15 Am </span>
+                <br>
+                
+            </div >
+
+      <input type ="submit" value ="submit" style="background-color: #ffe165; color : #000;width :100px ; height :30px;border-radius:10px "
+>
+
+
+            </div>
+            
+
+ 
+</body>
+</html>
